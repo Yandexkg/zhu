@@ -1,0 +1,198 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2021-04-06 20:10:16
+ * @LastEditTime: 2021-04-06 21:53:10
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\forZhu\index.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./images/z.ico" type="image/x-icon">
+	<title>朱仙子</title>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@keyframes background-overlay-animation {
+			0% {
+				background-image:
+					linear-gradient(4deg, rgba(255, 78, 36, 0.3) 50%, rgba(255, 78, 36, 0.3) 100%), url("./images/1z.jpg");
+			}
+
+			25% {
+				background-image:
+					linear-gradient(4deg, rgba(213, 49, 127, 0.3) 50%, rgba(213, 49, 127, 0.3) 100%), url("./images/2z.jpg");
+			}
+
+			50% {
+				background-image:
+					linear-gradient(4deg, rgba(36, 182, 255, 0.3) 50%, rgba(36, 182, 255, 1) 100%),
+					url("./images/3z.jpg");
+			}
+
+			100% {
+				background-image:
+					linear-gradient(4deg, rgba(0, 255, 254, 0.3) 50%, rgba(0, 255, 254, 0.3) 100%),
+					url("./images/4z.jpg");
+			}
+		}
+
+		@-webkit-keyframes background-overlay-animation {
+			0% {
+				background-image:
+					linear-gradient(4deg, rgba(255, 78, 36, 0.3) 50%,
+						rgba(255, 78, 36, 0.3) 100%) url("./images/1z.jpg");
+			}
+
+			25% {
+				background-image:
+					linear-gradient(4deg, rgba(213, 49, 127, 0.3) 50%, rgba(213, 49, 127, 0.3) 100%),
+					url("./images/2z.jpg");
+			}
+
+			50% {
+				background-image:
+					linear-gradient(4deg, rgba(36, 182, 255, 0.3) 50%, rgba(36, 182, 255, 1) 100%),
+					url("./images/3z.jpg");
+			}
+
+			100% {
+				background-image:
+					linear-gradient(4deg, rgba(0, 255, 254, 0.3) 50%, rgba(0, 255, 254, 0.3) 100%),
+					url("./images/4z.jpg");
+			}
+		}
+
+		body {
+			background-image: url("https://images.unsplash.com/photo-1559310589-2673bfe16970?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			animation-name: background-overlay-animation;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+		}
+
+		.containers {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		/* .container::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+
+        } */
+
+		.containers .box {
+			width: 300px;
+			height: 150px;
+			position: absolute;
+			/* background-color: royalblue; */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: inline-flex;
+			justify-content: space-around;
+			align-items: flex-start;
+			text-align: center;
+		}
+
+		.containers .box img {
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 50px;
+			transition: 2s rotate;
+		}
+
+		.containers .box img:hover {
+			cursor: pointer;
+			transform: rotate(360deg);
+			transition: 2s;
+		}
+
+		.containers .box span {
+			margin-top: 25px;
+			position: absolute;
+		}
+
+		.containers p {
+			position: absolute;
+			left: 50%;
+			top: 55%;
+			transform: translate(-50%, -50%);
+			font-size: 1.5rem;
+			font-family: 500px;
+			box-shadow: 5px 5px 15px rgb(109, 194, 183);
+			border-radius: 10px;
+			color: seashell;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="containers">
+		<div class="box">
+			<div>
+				<img src="https://q1.qlogo.cn/g?b=qq&nk=1014669842&s=640" alt="">
+			</div>
+			<div>
+				<span style="color: red;">❤</span>
+			</div>
+			<div>
+				<img src="https://q1.qlogo.cn/g?b=qq&nk=3095697814&s=640" alt="">
+			</div>
+		</div>
+		<p><span id="runtime_span" class="time"></span></p>
+	</div>
+
+	<script type="text/javascript">
+		function show_runtime() {
+			window.setTimeout("show_runtime()", 1000);
+			X = new Date("4/4/2021 00:00:00");
+			Y = new Date();
+			T = (Y.getTime() - X.getTime());
+			M = 24 * 60 * 60 * 1000;
+			a = T / M;
+			A = Math.floor(a);
+			b = (a - A) * 24;
+			B = Math.floor(b);
+			c = (b - B) * 60;
+			C = Math.floor((b - B) * 60);
+			D = Math.floor((c - C) * 60);
+			runtime_span.innerHTML = "" + A + "&nbsp天&nbsp" + B + "&nbsp时&nbsp" + C + "&nbsp分&nbsp" + D + "&nbsp秒&nbsp";
+		}
+		show_runtime();
+		console.log("%cPower by jkgblog.com", " text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:2rem")
+	</script>
+
+	<script>
+		let image = document.querySelectorAll('img')
+		for (let item of image) {
+			item.onclick = () => {
+				window.location.href = 'pic.html'
+			}
+		}
+	</script>
+</body>
+
+</html>

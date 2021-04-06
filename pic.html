@@ -1,0 +1,41 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-06-10 16:52:00
+ * @LastEditTime: 2021-04-06 21:51:00
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\forZhu\pic.html
+ * @Description: 耶斯莫拉
+-->
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="./images/z.ico" type="image/x-icon">
+		<link type="text/css" href="./css/mystyle.css" rel="stylesheet ">
+		<title>朱仙子</title>
+	</head>
+	<body>
+		<div class="box">
+			<div class="Container">
+				<div id="carousel">
+					<figure><img src="images/1.jpg"></figure>
+					<figure><img src="images/2.jpg"></figure>
+					<figure><img src="images/3.jpg"></figure>
+					<figure><img src="images/4.jpg"></figure>
+					<figure><img src="images/5.jpg"></figure>
+					<figure><img src="images/6.jpg"></figure>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			let image = document.querySelectorAll('img');
+			for(let item of image){
+				item.onclick = () => {
+					window.location.href = 'index.html';
+				}
+			}
+		</script>
+	</body>
+</html>
